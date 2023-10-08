@@ -4,7 +4,7 @@
 
 let myProfile = {
     name: "Weston Ford",
-    photo: "../images/weston_ford.jpg",
+    photo: "/images/weston_ford.jpg",
     favoriteFoods: [
         'pizza',
         'lasagna',
