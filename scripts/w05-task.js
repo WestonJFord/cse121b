@@ -55,8 +55,6 @@ function sortBy(temples) {
             displayTemples(notUtahTemples);
             // console.log(notUtahTemples);
             break;
-        case 'dedicated':
-            break;
         case 'older':
             let olderTemples = temples.filter(temple => new Date(temple.dedicated) < new Date(1950, 0, 1) );
             displayTemples(olderTemples)
