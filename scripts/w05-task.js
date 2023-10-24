@@ -19,7 +19,7 @@ const displayTemples = (temples) => {
         article.appendChild(img)
         templesElement.appendChild(article);
     });
-    console.log(templesElement)
+    // console.log(templesElement)
 };
 
 /* async getTemples Function using fetch()*/
@@ -27,7 +27,9 @@ const displayTemples = (temples) => {
 const getTemples = async () => {
     let response = await fetch('https://byui-cse.github.io/cse121b-ww-course/resources/temples.json');
     if (response.ok) {
+        // console.log(await response.json());
         templeList.push(await response.json());
+        
     };
 };
 
@@ -55,6 +57,10 @@ function sortBy(temples) {
             break;
         case 'dedicated':
             break;
+        case 'older':
+            let olderTemples = temples.filter(temple => new Date(temple.dedicated) < new Date(1950, 0, 1) );
+            displayTemples(olderTemples)
+            break;
         case 'all':
             displayTemples(temples);
             break;
@@ -62,7 +68,7 @@ function sortBy(temples) {
 };
 
 getTemples();
-console.log(templeList[0]);
+// console.log(templeList[0]);
 
 /* Event Listener */
 
