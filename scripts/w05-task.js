@@ -25,7 +25,7 @@ const displayTemples = (temples) => {
 /* async getTemples Function using fetch()*/
 
 const getTemples = async () => {
-    const response = await fetch('https://byui-cse.github.io/cse121b-ww-course/resources/temples.json');
+    let response = await fetch('https://byui-cse.github.io/cse121b-ww-course/resources/temples.json');
     if (response.ok) {
         templeList.push(await response.json());
     };
@@ -34,7 +34,7 @@ const getTemples = async () => {
 /* reset Function */
 
 function reset() {
-    templesElement.remove();
+    templesElement.innerHTML = '';
 };
 
 /* sortBy Function */
